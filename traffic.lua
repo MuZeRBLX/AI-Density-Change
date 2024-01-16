@@ -4,14 +4,12 @@ local config = {
     --[[0.0 - 1.0]]
 }
 
-function ChangeFrequency(num)
+RegisterCommand(ChangeAIDensity, function(source, args, raw)
+
+    config.PedFrequency = args[1]
+    config.TrafficFrequency = args[1]
     
-    config.PedFrequency = num
-    config.TrafficFrequency = num
-
-end
-
-RegisterCommand(ChangeAIDensity, ChangeFrequency(), false)
+end)
 
 Citizen.CreateThread(function()
 
